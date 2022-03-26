@@ -2,6 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+import random
 
 # File reading
 df = pd.read_csv('caida_moneda_datos.csv', sep = ',', decimal=',')
@@ -43,8 +44,8 @@ for clases in df:
 	break
 
 # Standard Deviation
-def stand_deviation:
-	std_deviation = numpy.std(df)
+def stand_deviation():
+	std_deviation = np.std(df)
 	print('Este es el valor de la desviacion estandar: ', std_deviation)
 
 stand_deviation()
@@ -82,3 +83,13 @@ def histograma():
 	return fig
 
 histograma()
+
+
+# Velocidad con 5 datos
+def velocidad():
+	speed_list = df.sample(5) # Picks up five different random values from df
+	print(speed_list)
+	speed = 2/speed_list # Returns speed for each different fall time
+	print(speed)
+	
+velocidad()
